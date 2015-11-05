@@ -114,32 +114,6 @@ void bitset_union(struct bitset * dest, struct bitset * src1, struct bitset * sr
 		}
 }
 
-/*
-below code works if sizes of two arrays are not equal, even though they should be.
-void bitset_union(struct bitset * dest, struct bitset * src1, struct bitset * src2)
-{
-	if(src1->arraySize >= src2->arraySize)
-	{
-		bitset_deep_copy(dest, src1);	//copy larger set into dest
-		int index;
-		for(index = 0; index < src2->arraySize; index++)
-		{
-			dest->array[index] = dest->array[index] | src2->array[index];
-		}
-	}
-	else
-	{
-		bitset_deep_copy(dest, src2);	//copy larger set into dest
-		int index;
-		for(index = 0; index < src1->arraySize; index++)
-		{
-			dest->array[index] = dest->array[index] | src1->array[index];
-		}
-	}
-}
-*/
-
-
 //dest gets overwritten with src1, whether or not src1 is smaller than src2
 void bitset_intersect(struct bitset * dest, struct bitset * src1, struct bitset * src2)
 {
